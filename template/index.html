@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+        </div>
+        <!--NASA Latest Mars News-->
+        <h2>Latest Mars News</h2>
+        <h4>{{mars.Title}}</h4>
+        <p>{{mars.Para}}</p>
+
+        <!--Featured Image-->
+        <h2>Featured Image</h2>
+        <img src={{mars.featured_Image}}>
+
+        <!--Mars Facts-->
+
+        <div class="mars-table">
+            <h2>Mars Facts</h2>
+            <table>{{ mars.mars_facts|safe }}</table>
+        </div>
+
+        <!--Mars Hemispheres-->
+        <div class="rows">
+
+            {% for hemi in mars.hemisphere_images %}
+            <table class="hemi-inline">
+
+                <tr>
+                    <th>{{hemi.tile}}</th>
+                </tr>
+                <tr>
+                    <td> <img width="200 px" height="200 px" src="{{hemi.img_ulr}}"></td>
+                </tr>
+
+            </table>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+.mars-table {
+    float: right;
+    margin-right: 250px;
+    height: 300 px;
+}
+
+.hemi-inline {
+    display: inline-block;
+    padding: 10px;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+}
